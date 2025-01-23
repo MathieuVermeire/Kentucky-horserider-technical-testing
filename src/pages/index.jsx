@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import '../index.css';
+import FetchSuperheroes from "../hooks/FetchSuperheroes";
+
 
 const Index = () => {
 
-	const data = (localStorage.getItem('comics'));
+	const data = FetchSuperheroes();
 
 	return (
 		<div className='superheroes-wrapper'>

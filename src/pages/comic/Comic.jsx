@@ -1,17 +1,17 @@
 import { Link, useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
 
 import '../../index.css';
 import '../../App.css';
-import Superheroapi from "../../hooks/Superheroapi";
+import FetchSuperheroes from "../../hooks/FetchSuperheroes";
+// import Superheroapi from "../../hooks/Superheroapi";
 
 const Comic = ({ onRandomBackground }) => {
 	const id = useParams();
-	const data = Superheroapi();
+	const data = FetchSuperheroes();
 
-	const navigate = useNavigate();
 
 	const [item, setItem] = useState(null);
 	const [comicEdition, setComicEdition] = useState('');
@@ -129,5 +129,9 @@ const Comic = ({ onRandomBackground }) => {
 			<div>Loading...</div>
 		);
 }
+
+Comic.propTypes = {
+  onRandomBackground: PropTypes.string.isRequired,  // Required string
+};
 
 export default Comic;

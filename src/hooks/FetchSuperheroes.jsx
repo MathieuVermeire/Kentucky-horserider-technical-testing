@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-const Superheroapi = () => {
+const FetchSuperheroes = () => {
 	// https://developer.marvel.com
 
-	const [url, setUrl] = useState('http://gateway.marvel.com/v1/public/comics?ts=1&apikey=793a5ff5d432192491413b839b1b125a&hash=61ef4a6558c995a73586253e8e9a83c4');
+	const url = 'http://gateway.marvel.com/v1/public/comics?ts=1&apikey=793a5ff5d432192491413b839b1b125a&hash=61ef4a6558c995a73586253e8e9a83c4';
 
 	const data = localStorage.getItem('comics');
 
@@ -18,4 +18,4 @@ const Superheroapi = () => {
 	return data;
 }
 
-export default Superheroapi;
+export default FetchSuperheroes;

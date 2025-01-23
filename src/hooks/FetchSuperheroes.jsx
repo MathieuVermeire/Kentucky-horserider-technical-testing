@@ -4,7 +4,10 @@ import { useEffect } from "react";
 const FetchSuperheroes = () => {
 	// https://developer.marvel.com
 
-	const url = 'http://gateway.marvel.com/v1/public/comics?ts=1&apikey=793a5ff5d432192491413b839b1b125a&hash=61ef4a6558c995a73586253e8e9a83c4';
+	const protocol = window.location.protocol === 'https:' ? 'https' : 'http';
+
+
+	const url = `${protocol}//gateway.marvel.com/v1/public/comics?ts=1&apikey=793a5ff5d432192491413b839b1b125a&hash=61ef4a6558c995a73586253e8e9a83c4`;
 
 	const data = localStorage.getItem('comics');
 
